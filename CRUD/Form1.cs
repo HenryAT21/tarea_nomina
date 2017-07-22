@@ -35,7 +35,28 @@ namespace CRUD
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            Operacion oper = new Operacion();
 
+            if (txtBuscar.Text.Length == 0)
+            {
+                DataTable dt = oper.ConsultaConResultado("SELECT * FROM empleado");
+                dataGridView1.DataSource = dt;
+                return;
+            }
+
+            if (radioID.Checked == true)
+            {
+                DataTable dt = oper.ConsultaConResultado("SELECT * FROM empleado WHERE id='" + txtBuscar.Text.Trim() + "' ");
+                dataGridView1.DataSource = dt;
+                return;
+            }
+
+            if (radioNombre.Checked == true)
+            {
+                DataTable dt = oper.ConsultaConResultado("SELECT * FROM empleado WHERE nombre LIKE'%" + txtBuscar.Text.Trim() + "%' ");
+                dataGridView1.DataSource = dt;
+                return;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,7 +73,14 @@ namespace CRUD
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            
+            Operacion oper = new Operacion();
+
+            if (radioNombre.Checked == true)
+            {
+                DataTable dt = oper.ConsultaConResultado(" SELECT  * FROM empleado WHERE nombre like '%" + txtBuscar.Text.Trim() + "%' ");
+                dataGridView1.DataSource = dt;
+                return;
+            }
         }
 
         private void radioID_CheckedChanged(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace CRUD
     {
         public string Conectar()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\_Sistemas\\nomina.db;Version=3;");
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\_Sistemas\\nomina.s3db;Version=3;");
             try
             {
                 cnx.Open();
@@ -56,8 +56,9 @@ namespace CRUD
         public DataTable ConsultaConResultado(string sql)
         {
             SQLiteDataAdapter ad;
-            DataTable dt = new DataTable();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\_Sistemas\\nomina.db;Version=3;");
+            System.Data.DataTable dt = new System.Data.DataTable();
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.db;Version=3;");
+
             try
             {
                 cnx.Open();
@@ -69,9 +70,12 @@ namespace CRUD
             }
             catch (SQLiteException ex)
             {
-                
+
             }
-            cnx.Close();
+            finally
+            {
+                cnx.Close();
+            }
             return dt;
         }
     }

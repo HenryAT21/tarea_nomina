@@ -72,7 +72,7 @@ namespace CRUD
 
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e) //Este es el boton Imprimir
+        private void btnImprimir_Click(object sender, EventArgs e)
         {           
 
         }
@@ -88,6 +88,26 @@ namespace CRUD
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCEdad_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCAnt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCEdad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCAnt_TextChanged(object sender, EventArgs e)
         {
 
         }

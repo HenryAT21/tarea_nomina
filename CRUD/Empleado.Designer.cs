@@ -39,7 +39,7 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.lblDGenerales = new System.Windows.Forms.Label();
             this.lblFN = new System.Windows.Forms.Label();
             this.lblFI = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(5, 15);
+            this.lblID.Location = new System.Drawing.Point(335, 42);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 0;
@@ -94,7 +94,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(119, 12);
+            this.txtID.Location = new System.Drawing.Point(359, 39);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(153, 20);
             this.txtID.TabIndex = 4;
@@ -156,15 +156,15 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // btnCerrar
+            // btnImprimir
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(258, 532);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 11;
-            this.btnCerrar.Text = "Imprimir";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnImprimir.Location = new System.Drawing.Point(258, 532);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 23);
+            this.btnImprimir.TabIndex = 11;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // lblDGenerales
             // 
@@ -200,7 +200,7 @@
             this.txtFN.Name = "txtFN";
             this.txtFN.Size = new System.Drawing.Size(153, 20);
             this.txtFN.TabIndex = 15;
-            this.txtFN.Text = "31/12/2017";
+            this.txtFN.Text = "2017-12-31";
             this.txtFN.TextChanged += new System.EventHandler(this.txtFN_TextChanged);
             // 
             // txtFI
@@ -209,7 +209,7 @@
             this.txtFI.Name = "txtFI";
             this.txtFI.Size = new System.Drawing.Size(153, 20);
             this.txtFI.TabIndex = 16;
-            this.txtFI.Text = "31/12/2017";
+            this.txtFI.Text = "2017-12-31";
             this.txtFI.TextChanged += new System.EventHandler(this.txtFI_TextChanged);
             // 
             // lblHeadSalario
@@ -254,6 +254,7 @@
             this.txtCEdad.Name = "txtCEdad";
             this.txtCEdad.Size = new System.Drawing.Size(153, 20);
             this.txtCEdad.TabIndex = 21;
+            this.txtCEdad.TextChanged += new System.EventHandler(this.txtCEdad_TextChanged);
             // 
             // txtCAnt
             // 
@@ -261,6 +262,7 @@
             this.txtCAnt.Name = "txtCAnt";
             this.txtCAnt.Size = new System.Drawing.Size(153, 20);
             this.txtCAnt.TabIndex = 22;
+            this.txtCAnt.TextChanged += new System.EventHandler(this.txtCAnt_TextChanged);
             // 
             // btnCEdad
             // 
@@ -270,6 +272,7 @@
             this.btnCEdad.TabIndex = 23;
             this.btnCEdad.Text = "Calcular Edad";
             this.btnCEdad.UseVisualStyleBackColor = true;
+            this.btnCEdad.Click += new System.EventHandler(this.btnCEdad_Click);
             // 
             // btnCAnt
             // 
@@ -279,6 +282,7 @@
             this.btnCAnt.TabIndex = 24;
             this.btnCAnt.Text = "Calcular Antigüedad";
             this.btnCAnt.UseVisualStyleBackColor = true;
+            this.btnCAnt.Click += new System.EventHandler(this.btnCAnt_Click);
             // 
             // frmEmpleado
             // 
@@ -298,7 +302,7 @@
             this.Controls.Add(this.lblFI);
             this.Controls.Add(this.lblFN);
             this.Controls.Add(this.lblDGenerales);
-            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCrear);
@@ -331,7 +335,7 @@
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lblDGenerales;
         private System.Windows.Forms.Label lblFN;
         private System.Windows.Forms.Label lblFI;
