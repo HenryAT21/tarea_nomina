@@ -39,24 +39,26 @@ namespace CRUD
 
             if (txtBuscar.Text.Length == 0)
             {
-                DataTable dt = oper.ConsultaConResultado("SELECT * FROM empleado");
+
+                DataTable dt = oper.ConsultaConResultado(" SELECT  * FROM empleado ");
                 dataGridView1.DataSource = dt;
                 return;
             }
 
             if (radioID.Checked == true)
             {
-                DataTable dt = oper.ConsultaConResultado("SELECT * FROM empleado WHERE id='" + txtBuscar.Text.Trim() + "' ");
+                DataTable dt = oper.ConsultaConResultado(" SELECT  * FROM empleado WHERE id='" + txtBuscar.Text.Trim() + "' ");
                 dataGridView1.DataSource = dt;
                 return;
             }
 
             if (radioNombre.Checked == true)
             {
-                DataTable dt = oper.ConsultaConResultado("SELECT * FROM empleado WHERE nombre LIKE'%" + txtBuscar.Text.Trim() + "%' ");
+                DataTable dt = oper.ConsultaConResultado(" SELECT  * FROM empleado WHERE nombre like '%" + txtBuscar.Text.Trim() + "%' ");
                 dataGridView1.DataSource = dt;
                 return;
             }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -92,5 +94,21 @@ namespace CRUD
         {
 
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    Operacion oper = new Operacion();
+        //    //string resultado = oper.Conectar();
+        //    //MessageBox.Show(resultado);
+
+        //    DataTable dt_empleado = oper.ConsultaConResultado(" SELECT  * FROM empleado where id=1 ");
+        //    foreach (DataRow dr in dt_empleado.Rows)
+        //    {
+        //        string nombre, apellidos;
+        //        nombre = dr["nombre"].ToString();
+        //        apellidos = dr["apellidos"].ToString();
+        //        txtNombreCompleto.Text = nombre + " " + apellidos;
+        //    }
+        //}
     }
 }

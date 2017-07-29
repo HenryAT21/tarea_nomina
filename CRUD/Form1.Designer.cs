@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.radioID = new System.Windows.Forms.RadioButton();
@@ -48,47 +42,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
-            this.Apellido,
-            this.Sexo,
-            this.Fecha_Nacimiento,
-            this.Fecha_Ingreso});
             this.dataGridView1.Location = new System.Drawing.Point(13, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(637, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Sexo
-            // 
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            // 
-            // Fecha_Nacimiento
-            // 
-            this.Fecha_Nacimiento.HeaderText = "Fecha_Nacimiento";
-            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
-            // 
-            // Fecha_Ingreso
-            // 
-            this.Fecha_Ingreso.HeaderText = "Fecha_Ingreso";
-            this.Fecha_Ingreso.Name = "Fecha_Ingreso";
             // 
             // txtBuscar
             // 
@@ -189,9 +146,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.RadioButton radioID;
@@ -199,9 +153,6 @@
         private System.Windows.Forms.RadioButton radioApellido;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnProbar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Nacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Ingreso;
     }
 }
 

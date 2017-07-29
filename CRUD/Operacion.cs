@@ -15,12 +15,12 @@ namespace CRUD
     {
         public string Conectar()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\_Sistemas\\nomina.s3db;Version=3;");
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.s3db;Version=3;");
             try
             {
                 cnx.Open();
 
-                return "Conexión Exitosa!";
+                return "Conexión exitosa!";
             }
             catch (Exception ex)
             {
@@ -31,10 +31,10 @@ namespace CRUD
                 cnx.Close();
             }
         }
-
         public string ConsultaSinResultado(string sql)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\_Sistemas\\nomina.s3db;Version=3;");
+
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.s3db;Version=3;");
             try
             {
                 cnx.Open();
@@ -42,7 +42,6 @@ namespace CRUD
                 command.ExecuteNonQuery();
                 return "";
             }
-
             catch (Exception ex)
             {
                 return ex.Message;
@@ -51,16 +50,18 @@ namespace CRUD
             {
                 cnx.Close();
             }
+
         }
 
         public DataTable ConsultaConResultado(string sql)
         {
             SQLiteDataAdapter ad;
             System.Data.DataTable dt = new System.Data.DataTable();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.db;Version=3;");
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.s3db;Version=3;");
 
             try
             {
+
                 cnx.Open();
                 SQLiteCommand cmd;
                 cmd = cnx.CreateCommand();
@@ -77,6 +78,7 @@ namespace CRUD
                 cnx.Close();
             }
             return dt;
+
         }
     }
 }
