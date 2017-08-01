@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleado));
             this.lblID = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnApellido = new System.Windows.Forms.Label();
@@ -35,9 +36,8 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtSexo = new System.Windows.Forms.TextBox();
             this.btnCrear = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.lblDGenerales = new System.Windows.Forms.Label();
@@ -53,17 +53,25 @@
             this.txtCAnt = new System.Windows.Forms.TextBox();
             this.btnCEdad = new System.Windows.Forms.Button();
             this.btnCAnt = new System.Windows.Forms.Button();
+            this.pictureBoxEmpleado = new System.Windows.Forms.PictureBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.lblCedula = new System.Windows.Forms.Label();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.cmbPuesto = new System.Windows.Forms.ComboBox();
+            this.btnCargos = new System.Windows.Forms.Button();
+            this.btnLimparFormularioEmp = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(335, 42);
+            this.lblID.Location = new System.Drawing.Point(356, 42);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID";
-            this.lblID.Visible = false;
             // 
             // lblNombre
             // 
@@ -94,12 +102,10 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(359, 39);
+            this.txtID.Location = new System.Drawing.Point(380, 39);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(153, 20);
+            this.txtID.Size = new System.Drawing.Size(34, 20);
             this.txtID.TabIndex = 4;
-            this.txtID.Visible = false;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // txtNombre
             // 
@@ -107,7 +113,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(153, 20);
             this.txtNombre.TabIndex = 5;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtApellido
             // 
@@ -115,20 +120,10 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(153, 20);
             this.txtApellido.TabIndex = 6;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Location = new System.Drawing.Point(119, 92);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(153, 20);
-            this.txtSexo.TabIndex = 7;
-            this.txtSexo.Text = "M";
-            this.txtSexo.TextChanged += new System.EventHandler(this.txtSexo_TextChanged);
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(15, 532);
+            this.btnCrear.Location = new System.Drawing.Point(11, 452);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 8;
@@ -136,19 +131,19 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // btnGuardar
+            // btnActualizar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(96, 532);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnActualizar.Location = new System.Drawing.Point(173, 452);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(177, 532);
+            this.btnBorrar.Location = new System.Drawing.Point(254, 452);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 10;
@@ -158,7 +153,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(258, 532);
+            this.btnImprimir.Location = new System.Drawing.Point(92, 452);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 11;
@@ -169,17 +164,17 @@
             // lblDGenerales
             // 
             this.lblDGenerales.AutoSize = true;
+            this.lblDGenerales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDGenerales.Location = new System.Drawing.Point(12, 9);
             this.lblDGenerales.Name = "lblDGenerales";
-            this.lblDGenerales.Size = new System.Drawing.Size(86, 13);
+            this.lblDGenerales.Size = new System.Drawing.Size(130, 17);
             this.lblDGenerales.TabIndex = 12;
             this.lblDGenerales.Text = "Datos Generales";
-            this.lblDGenerales.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblFN
             // 
             this.lblFN.AutoSize = true;
-            this.lblFN.Location = new System.Drawing.Point(5, 124);
+            this.lblFN.Location = new System.Drawing.Point(5, 149);
             this.lblFN.Name = "lblFN";
             this.lblFN.Size = new System.Drawing.Size(108, 13);
             this.lblFN.TabIndex = 13;
@@ -188,7 +183,7 @@
             // lblFI
             // 
             this.lblFI.AutoSize = true;
-            this.lblFI.Location = new System.Drawing.Point(5, 154);
+            this.lblFI.Location = new System.Drawing.Point(5, 179);
             this.lblFI.Name = "lblFI";
             this.lblFI.Size = new System.Drawing.Size(90, 13);
             this.lblFI.TabIndex = 14;
@@ -196,35 +191,34 @@
             // 
             // txtFN
             // 
-            this.txtFN.Location = new System.Drawing.Point(119, 121);
+            this.txtFN.Location = new System.Drawing.Point(119, 146);
             this.txtFN.Name = "txtFN";
-            this.txtFN.Size = new System.Drawing.Size(153, 20);
+            this.txtFN.Size = new System.Drawing.Size(71, 20);
             this.txtFN.TabIndex = 15;
             this.txtFN.Text = "2017-12-31";
-            this.txtFN.TextChanged += new System.EventHandler(this.txtFN_TextChanged);
             // 
             // txtFI
             // 
-            this.txtFI.Location = new System.Drawing.Point(119, 151);
+            this.txtFI.Location = new System.Drawing.Point(119, 176);
             this.txtFI.Name = "txtFI";
-            this.txtFI.Size = new System.Drawing.Size(153, 20);
+            this.txtFI.Size = new System.Drawing.Size(71, 20);
             this.txtFI.TabIndex = 16;
             this.txtFI.Text = "2017-12-31";
-            this.txtFI.TextChanged += new System.EventHandler(this.txtFI_TextChanged);
             // 
             // lblHeadSalario
             // 
             this.lblHeadSalario.AutoSize = true;
-            this.lblHeadSalario.Location = new System.Drawing.Point(12, 207);
+            this.lblHeadSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeadSalario.Location = new System.Drawing.Point(12, 242);
             this.lblHeadSalario.Name = "lblHeadSalario";
-            this.lblHeadSalario.Size = new System.Drawing.Size(39, 13);
+            this.lblHeadSalario.Size = new System.Drawing.Size(59, 17);
             this.lblHeadSalario.TabIndex = 17;
             this.lblHeadSalario.Text = "Salario";
             // 
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(71, 242);
+            this.lblSalario.Location = new System.Drawing.Point(71, 277);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(42, 13);
             this.lblSalario.TabIndex = 18;
@@ -232,19 +226,18 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(119, 239);
+            this.txtSalario.Location = new System.Drawing.Point(119, 274);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(153, 20);
             this.txtSalario.TabIndex = 19;
-            this.txtSalario.Text = "RD$";
-            this.txtSalario.TextChanged += new System.EventHandler(this.txtSalario_TextChanged);
             // 
             // lblCalculos
             // 
             this.lblCalculos.AutoSize = true;
+            this.lblCalculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalculos.Location = new System.Drawing.Point(12, 319);
             this.lblCalculos.Name = "lblCalculos";
-            this.lblCalculos.Size = new System.Drawing.Size(47, 13);
+            this.lblCalculos.Size = new System.Drawing.Size(69, 17);
             this.lblCalculos.TabIndex = 20;
             this.lblCalculos.Text = "Cálculos";
             // 
@@ -254,7 +247,6 @@
             this.txtCEdad.Name = "txtCEdad";
             this.txtCEdad.Size = new System.Drawing.Size(153, 20);
             this.txtCEdad.TabIndex = 21;
-            this.txtCEdad.TextChanged += new System.EventHandler(this.txtCEdad_TextChanged);
             // 
             // txtCAnt
             // 
@@ -262,7 +254,6 @@
             this.txtCAnt.Name = "txtCAnt";
             this.txtCAnt.Size = new System.Drawing.Size(153, 20);
             this.txtCAnt.TabIndex = 22;
-            this.txtCAnt.TextChanged += new System.EventHandler(this.txtCAnt_TextChanged);
             // 
             // btnCEdad
             // 
@@ -272,7 +263,6 @@
             this.btnCEdad.TabIndex = 23;
             this.btnCEdad.Text = "Calcular Edad";
             this.btnCEdad.UseVisualStyleBackColor = true;
-            this.btnCEdad.Click += new System.EventHandler(this.btnCEdad_Click);
             // 
             // btnCAnt
             // 
@@ -282,13 +272,109 @@
             this.btnCAnt.TabIndex = 24;
             this.btnCAnt.Text = "Calcular Antigüedad";
             this.btnCAnt.UseVisualStyleBackColor = true;
-            this.btnCAnt.Click += new System.EventHandler(this.btnCAnt_Click);
+            // 
+            // pictureBoxEmpleado
+            // 
+            this.pictureBoxEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEmpleado.Image")));
+            this.pictureBoxEmpleado.Location = new System.Drawing.Point(359, 69);
+            this.pictureBoxEmpleado.Name = "pictureBoxEmpleado";
+            this.pictureBoxEmpleado.Size = new System.Drawing.Size(173, 190);
+            this.pictureBoxEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEmpleado.TabIndex = 25;
+            this.pictureBoxEmpleado.TabStop = false;
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cmbSexo.Location = new System.Drawing.Point(119, 92);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(48, 21);
+            this.cmbSexo.TabIndex = 26;
+            // 
+            // lblCedula
+            // 
+            this.lblCedula.AutoSize = true;
+            this.lblCedula.Location = new System.Drawing.Point(5, 123);
+            this.lblCedula.Name = "lblCedula";
+            this.lblCedula.Size = new System.Drawing.Size(40, 13);
+            this.lblCedula.TabIndex = 27;
+            this.lblCedula.Text = "Cedula";
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(119, 120);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(100, 20);
+            this.txtCedula.TabIndex = 28;
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Location = new System.Drawing.Point(5, 209);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(40, 13);
+            this.lblPuesto.TabIndex = 29;
+            this.lblPuesto.Text = "Puesto";
+            // 
+            // cmbPuesto
+            // 
+            this.cmbPuesto.FormattingEnabled = true;
+            this.cmbPuesto.Items.AddRange(new object[] {
+            "gerente general",
+            "contable",
+            "secretaria",
+            "auxiliar de cont.",
+            "mecanico",
+            "chofer",
+            "enc. de almacen",
+            "depemdiente",
+            "cajera/o",
+            "mensajero/a",
+            "gerente de compras",
+            "enc. de mantenimiento",
+            "asistente del chofer"});
+            this.cmbPuesto.Location = new System.Drawing.Point(119, 209);
+            this.cmbPuesto.Name = "cmbPuesto";
+            this.cmbPuesto.Size = new System.Drawing.Size(121, 21);
+            this.cmbPuesto.TabIndex = 30;
+            // 
+            // btnCargos
+            // 
+            this.btnCargos.Location = new System.Drawing.Point(246, 207);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Size = new System.Drawing.Size(75, 23);
+            this.btnCargos.TabIndex = 31;
+            this.btnCargos.Text = "Cargos";
+            this.btnCargos.UseVisualStyleBackColor = true;
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            // 
+            // btnLimparFormularioEmp
+            // 
+            this.btnLimparFormularioEmp.Location = new System.Drawing.Point(335, 452);
+            this.btnLimparFormularioEmp.Name = "btnLimparFormularioEmp";
+            this.btnLimparFormularioEmp.Size = new System.Drawing.Size(115, 23);
+            this.btnLimparFormularioEmp.TabIndex = 32;
+            this.btnLimparFormularioEmp.Text = "Limpiar Formulario";
+            this.btnLimparFormularioEmp.UseVisualStyleBackColor = true;
+            this.btnLimparFormularioEmp.Click += new System.EventHandler(this.btnLimparFormularioEmp_Click);
             // 
             // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 567);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(544, 578);
+            this.Controls.Add(this.btnLimparFormularioEmp);
+            this.Controls.Add(this.btnCargos);
+            this.Controls.Add(this.cmbPuesto);
+            this.Controls.Add(this.lblPuesto);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.lblCedula);
+            this.Controls.Add(this.cmbSexo);
+            this.Controls.Add(this.pictureBoxEmpleado);
             this.Controls.Add(this.btnCAnt);
             this.Controls.Add(this.btnCEdad);
             this.Controls.Add(this.txtCAnt);
@@ -304,9 +390,8 @@
             this.Controls.Add(this.lblDGenerales);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtID);
@@ -314,9 +399,12 @@
             this.Controls.Add(this.btnApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblID);
+            this.MaximizeBox = false;
             this.Name = "frmEmpleado";
             this.Text = "Empleado";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmEmpleado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,9 +419,8 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lblDGenerales;
@@ -349,5 +436,13 @@
         private System.Windows.Forms.TextBox txtCAnt;
         private System.Windows.Forms.Button btnCEdad;
         private System.Windows.Forms.Button btnCAnt;
+        private System.Windows.Forms.PictureBox pictureBoxEmpleado;
+        private System.Windows.Forms.ComboBox cmbSexo;
+        private System.Windows.Forms.Label lblCedula;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.Label lblPuesto;
+        private System.Windows.Forms.ComboBox cmbPuesto;
+        private System.Windows.Forms.Button btnCargos;
+        private System.Windows.Forms.Button btnLimparFormularioEmp;
     }
 }

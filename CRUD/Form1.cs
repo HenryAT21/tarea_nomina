@@ -22,15 +22,22 @@ namespace CRUD
             InitializeComponent();
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private void btnDetNom_Click(object sender, EventArgs e)
         {
-
+            frmDetalle_Nomina fr = new frmDetalle_Nomina();
+            fr.Show();
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
             frmEmpleado f = new frmEmpleado();
             f.Show();
+        }
+
+        private void btnBN_Click(object sender, EventArgs e)
+        {
+            frmBusqueda_Nomina fr = new frmBusqueda_Nomina();
+            fr.Show();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -47,7 +54,7 @@ namespace CRUD
 
             if (radioID.Checked == true)
             {
-                DataTable dt = oper.ConsultaConResultado(" SELECT  * FROM empleado WHERE id='" + txtBuscar.Text.Trim() + "' ");
+                DataTable dt = oper.ConsultaConResultado(" SELECT  * FROM empleado WHERE id_empleado='" + txtBuscar.Text.Trim() + "' ");
                 dataGridView1.DataSource = dt;
                 return;
             }
@@ -58,11 +65,6 @@ namespace CRUD
                 dataGridView1.DataSource = dt;
                 return;
             }
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -84,31 +86,5 @@ namespace CRUD
                 return;
             }
         }
-
-        private void radioID_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioNombre_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    Operacion oper = new Operacion();
-        //    //string resultado = oper.Conectar();
-        //    //MessageBox.Show(resultado);
-
-        //    DataTable dt_empleado = oper.ConsultaConResultado(" SELECT  * FROM empleado where id=1 ");
-        //    foreach (DataRow dr in dt_empleado.Rows)
-        //    {
-        //        string nombre, apellidos;
-        //        nombre = dr["nombre"].ToString();
-        //        apellidos = dr["apellidos"].ToString();
-        //        txtNombreCompleto.Text = nombre + " " + apellidos;
-        //    }
-        //}
     }
 }

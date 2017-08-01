@@ -36,6 +36,8 @@
             this.radioApellido = new System.Windows.Forms.RadioButton();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnProbar = new System.Windows.Forms.Button();
+            this.btnBN = new System.Windows.Forms.Button();
+            this.btnDetNom = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,12 +46,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 89);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(637, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(792, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(212, 35);
+            this.txtBuscar.Location = new System.Drawing.Point(176, 12);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(276, 20);
             this.txtBuscar.TabIndex = 1;
@@ -57,7 +59,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(494, 35);
+            this.btnBuscar.Location = new System.Drawing.Point(458, 12);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
@@ -75,7 +77,6 @@
             this.radioID.TabStop = true;
             this.radioID.Text = "ID";
             this.radioID.UseVisualStyleBackColor = true;
-            this.radioID.CheckedChanged += new System.EventHandler(this.radioID_CheckedChanged);
             // 
             // radioNombre
             // 
@@ -87,7 +88,6 @@
             this.radioNombre.TabStop = true;
             this.radioNombre.Text = "Nombre";
             this.radioNombre.UseVisualStyleBackColor = true;
-            this.radioNombre.CheckedChanged += new System.EventHandler(this.radioNombre_CheckedChanged);
             // 
             // radioApellido
             // 
@@ -99,11 +99,11 @@
             this.radioApellido.TabStop = true;
             this.radioApellido.Text = "Apellido";
             this.radioApellido.UseVisualStyleBackColor = true;
-            this.radioApellido.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioApellido.Visible = false;
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(575, 35);
+            this.btnCrear.Location = new System.Drawing.Point(539, 12);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 6;
@@ -113,19 +113,43 @@
             // 
             // btnProbar
             // 
-            this.btnProbar.Location = new System.Drawing.Point(659, 146);
+            this.btnProbar.Location = new System.Drawing.Point(691, 35);
             this.btnProbar.Name = "btnProbar";
-            this.btnProbar.Size = new System.Drawing.Size(75, 23);
+            this.btnProbar.Size = new System.Drawing.Size(114, 23);
             this.btnProbar.TabIndex = 7;
-            this.btnProbar.Text = "Probar";
+            this.btnProbar.Text = "Verificar Conexión";
             this.btnProbar.UseVisualStyleBackColor = true;
             this.btnProbar.Click += new System.EventHandler(this.btnProbar_Click);
+            // 
+            // btnBN
+            // 
+            this.btnBN.Location = new System.Drawing.Point(176, 53);
+            this.btnBN.Name = "btnBN";
+            this.btnBN.Size = new System.Drawing.Size(119, 23);
+            this.btnBN.TabIndex = 8;
+            this.btnBN.Text = "Buscar Nomina";
+            this.btnBN.UseVisualStyleBackColor = true;
+            this.btnBN.Click += new System.EventHandler(this.btnBN_Click);
+            // 
+            // btnDetNom
+            // 
+            this.btnDetNom.Location = new System.Drawing.Point(333, 53);
+            this.btnDetNom.Name = "btnDetNom";
+            this.btnDetNom.Size = new System.Drawing.Size(119, 23);
+            this.btnDetNom.TabIndex = 9;
+            this.btnDetNom.Text = "Detalle de Nomina";
+            this.btnDetNom.UseVisualStyleBackColor = true;
+            this.btnDetNom.Click += new System.EventHandler(this.btnDetNom_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 251);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(817, 251);
+            this.Controls.Add(this.btnDetNom);
+            this.Controls.Add(this.btnBN);
             this.Controls.Add(this.btnProbar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.radioApellido);
@@ -134,9 +158,9 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Busqueda";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,6 +177,8 @@
         private System.Windows.Forms.RadioButton radioApellido;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnProbar;
+        private System.Windows.Forms.Button btnBN;
+        private System.Windows.Forms.Button btnDetNom;
     }
 }
 

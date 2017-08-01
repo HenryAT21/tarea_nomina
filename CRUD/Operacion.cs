@@ -14,8 +14,8 @@ namespace CRUD
     public class Operacion
     {
         public string Conectar()
-        {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.s3db;Version=3;");
+        {   //conectar a la base de datos
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina2.s3db;Version=3;");
             try
             {
                 cnx.Open();
@@ -32,9 +32,8 @@ namespace CRUD
             }
         }
         public string ConsultaSinResultado(string sql)
-        {
-
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.s3db;Version=3;");
+        {   //para ejecutar consultas sin resultado como update, delete, insert, etc...
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina2.s3db;Version=3;");
             try
             {
                 cnx.Open();
@@ -54,14 +53,13 @@ namespace CRUD
         }
 
         public DataTable ConsultaConResultado(string sql)
-        {
+        {   //para consultas con resultados como select
             SQLiteDataAdapter ad;
             System.Data.DataTable dt = new System.Data.DataTable();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina.s3db;Version=3;");
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina2.s3db;Version=3;");
 
             try
             {
-
                 cnx.Open();
                 SQLiteCommand cmd;
                 cmd = cnx.CreateCommand();
@@ -69,9 +67,9 @@ namespace CRUD
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
-            catch (SQLiteException ex)
+            catch (SQLiteException)
             {
-
+                
             }
             finally
             {
