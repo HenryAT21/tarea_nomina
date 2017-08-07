@@ -19,14 +19,15 @@ namespace CRUD
 
         private void btnBuscarNomina_Click(object sender, EventArgs e)
         {
+            Operacion oper = new Operacion();//conexion a la base de datos
             //buscar la nomina por cargo
-            Operacion oper = new Operacion();
             DataTable dt = oper.ConsultaConResultado("SELECT * FROM detalle_nomina WHERE fk_id_cargo= '" + cmbBuscarNomina.Text + "'");
             dataGridViewBN.DataSource = dt;
         }
 
         private void btnDetalleN_Click(object sender, EventArgs e)
         {
+            //muestra la ventana del detalle de nomina
             frmDetalle_Nomina fr = new frmDetalle_Nomina();
             fr.Show();
         }

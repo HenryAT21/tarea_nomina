@@ -19,14 +19,15 @@ namespace CRUD
 
         private void btnCrearDN_Click(object sender, EventArgs e)
         {
-            Operacion oper = new Operacion();
+            Operacion oper = new Operacion();//conexion a la base de datos
 
-            try /*Con estas condiciones, a menos que no este todo lleno, no saltara el mensaje.*/
+            try
             {
+                //para insertar un cargo a la tabla de cargos en la base de datos
                 oper.ConsultaSinResultado("INSERT INTO detalle_nomina(id_det, ISR, SS, otros, total_deducciones, sueldo_neto, fk_id_cargo) " +
                 "VALUES('" + txtID_det.Text + "', '" + txt_ISR.Text + "', '" + txt_SS.Text + "', '" + txt_Otros.Text + "', " +
                 "'" + txt_TD.Text + "', '" + txt_SN.Text + "', '" + cmbCargoDN.Text + "')");
-
+                /*Con estas condiciones, a menos que no este todo lleno, no saltara el mensaje.*/
                 if (txtID_det.Text == "")
                 {
                     MessageBox.Show("Faltan datos.");
@@ -64,7 +65,7 @@ namespace CRUD
 
             }
             catch (Exception error)
-            {
+            {//mostrara un mensaje de error
                 MessageBox.Show(error.Message);
             }
             /*con este, al momento de crear un nuevo detalle de nomina 
@@ -85,7 +86,7 @@ namespace CRUD
                 MessageBox.Show("Inserte datos en ID");
             }
 
-            Operacion oper = new Operacion();
+            Operacion oper = new Operacion();//conexion a la base de datos
             DataTable dtDN = oper.ConsultaConResultado("SELECT * FROM detalle_nomina WHERE id_det= '" + txtID_det.Text + "'");
             foreach (DataRow dr in dtDN.Rows)
             {

@@ -16,25 +16,25 @@ namespace CRUD
         public string Conectar()
         {   //conectar a la base de datos
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina2.s3db;Version=3;");
-            try
-            {
+            try //manejador de errores
+            {//abrir la conexion con la base de datos
                 cnx.Open();
 
                 return "Conexión exitosa!";
             }
             catch (Exception ex)
-            {
+            {//mostrara un mensaje de error si la conexion falla
                 return ex.Message;
             }
             finally
-            {
+            {//cerrar conexion con la base de datos
                 cnx.Close();
             }
         }
         public string ConsultaSinResultado(string sql)
         {   //para ejecutar consultas sin resultado como update, delete, insert, etc...
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina2.s3db;Version=3;");
-            try
+            try //manejador de errores
             {
                 cnx.Open();
                 SQLiteCommand command = new SQLiteCommand(sql, cnx);
@@ -42,11 +42,11 @@ namespace CRUD
                 return "";
             }
             catch (Exception ex)
-            {
+            {//mostrara un mensaje en caso de error
                 return ex.Message;
             }
             finally
-            {
+            {//cerrar la conexion con la base de datos
                 cnx.Close();
             }
 
@@ -58,7 +58,7 @@ namespace CRUD
             System.Data.DataTable dt = new System.Data.DataTable();
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\sistema\\nomina2.s3db;Version=3;");
 
-            try
+            try //manejador de errores
             {
                 cnx.Open();
                 SQLiteCommand cmd;
@@ -72,7 +72,7 @@ namespace CRUD
                 
             }
             finally
-            {
+            {//cerrar la conexion con la base de datos
                 cnx.Close();
             }
             return dt;
