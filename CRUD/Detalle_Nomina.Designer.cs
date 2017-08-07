@@ -236,7 +236,7 @@
             this.txtID_empDN.Size = new System.Drawing.Size(35, 20);
             this.txtID_empDN.TabIndex = 19;
             this.txtID_empDN.Visible = false;
-            this.txtID_empDN.TextChanged += new System.EventHandler(this.txtID_empDN_TextChanged);
+            //this.txtID_empDN.TextChanged += new System.EventHandler(this.txtID_empDN_TextChanged);
             // 
             // btnLimpiar
             // 

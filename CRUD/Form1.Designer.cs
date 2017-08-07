@@ -38,6 +38,7 @@
             this.btnProbar = new System.Windows.Forms.Button();
             this.btnBN = new System.Windows.Forms.Button();
             this.btnDetNom = new System.Windows.Forms.Button();
+            this.btnVisor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,13 +134,23 @@
             // 
             // btnDetNom
             // 
-            this.btnDetNom.Location = new System.Drawing.Point(333, 53);
+            this.btnDetNom.Location = new System.Drawing.Point(301, 53);
             this.btnDetNom.Name = "btnDetNom";
             this.btnDetNom.Size = new System.Drawing.Size(119, 23);
             this.btnDetNom.TabIndex = 9;
             this.btnDetNom.Text = "Detalle de Nomina";
             this.btnDetNom.UseVisualStyleBackColor = true;
             this.btnDetNom.Click += new System.EventHandler(this.btnDetNom_Click);
+            // 
+            // btnVisor
+            // 
+            this.btnVisor.Location = new System.Drawing.Point(426, 53);
+            this.btnVisor.Name = "btnVisor";
+            this.btnVisor.Size = new System.Drawing.Size(119, 23);
+            this.btnVisor.TabIndex = 10;
+            this.btnVisor.Text = "Visor";
+            this.btnVisor.UseVisualStyleBackColor = true;
+            this.btnVisor.Click += new System.EventHandler(this.btnVisor_Click);
             // 
             // Form1
             // 
@@ -148,6 +159,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(817, 251);
+            this.Controls.Add(this.btnVisor);
             this.Controls.Add(this.btnDetNom);
             this.Controls.Add(this.btnBN);
             this.Controls.Add(this.btnProbar);
@@ -179,6 +191,7 @@
         private System.Windows.Forms.Button btnProbar;
         private System.Windows.Forms.Button btnBN;
         private System.Windows.Forms.Button btnDetNom;
+        private System.Windows.Forms.Button btnVisor;
     }
 }
 

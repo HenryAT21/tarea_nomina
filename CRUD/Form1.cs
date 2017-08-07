@@ -86,5 +86,32 @@ namespace CRUD
                 return;
             }
         }
+
+        private void btnVisor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Operacion oper = new Operacion();
+                DataSet ds = new DataSet();
+
+                DataTable dt_empleado = oper.ConsultaConResultado("SELECT * FROM EMPLEADO");
+                ds.Tables.Add(dt_empleado);
+                ds.Tables[0].TableName = "EMPLEADO";
+
+                DataTable dt_dNomina = oper.ConsultaConResultado("SELECT * FROM detalle_nomina");
+                ds.Tables.Add(dt_dNomina);
+                ds.Tables[1].TableName = "DETALLE_NOMINA";
+
+                ds.WriteXml(@"C:\sistema\xml\empleado.xml");
+                ds.WriteXml(@"C:\sistema\xml\DETALLE_NOMINA.xml");
+                frmVisor fr = new frmVisor("CrystalReport1.rpt");
+                fr.Show();
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+            }
+        }
     }
 }

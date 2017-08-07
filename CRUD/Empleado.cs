@@ -27,7 +27,6 @@ namespace CRUD
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-
             Operacion oper = new Operacion();
             oper.ConsultaSinResultado
                 (" INSERT INTO empleado(id_empleado, nombre, apellido, sexo, cedula, fecha_nacimiento, fecha_ingreso, fk_id_cargo, sueldo) " +
@@ -61,7 +60,7 @@ namespace CRUD
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
-        {
+        {   
             Operacion oper = new Operacion();
 
             DataTable dtEmpleado = oper.ConsultaConResultado("SELECT * FROM empleado WHERE id_empleado= '" + txtID.Text + "'");
@@ -98,7 +97,7 @@ namespace CRUD
             }
             catch (Exception error)
             {
-                MessageBox.Show("La foto "+ txtID.Text +".jpg no existe en " + error.Message);
+                MessageBox.Show("La foto " + txtID.Text + ".jpg no existe en " + error.Message);
             }
         }
 
