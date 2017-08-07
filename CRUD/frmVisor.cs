@@ -18,6 +18,7 @@ namespace CRUD
         public frmVisor(string nombre_reporte)
         {
             InitializeComponent();
+
             //Clase de Crystal Report para manejar los datos en el crystalReportViewer
             ReportDocument cryRpt = new ReportDocument();
             cryRpt.Load(nombre_reporte);
