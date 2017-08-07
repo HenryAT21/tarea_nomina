@@ -123,9 +123,9 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(11, 452);
+            this.btnCrear.Location = new System.Drawing.Point(12, 510);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.Size = new System.Drawing.Size(75, 37);
             this.btnCrear.TabIndex = 8;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -133,27 +133,31 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(173, 452);
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnActualizar.ForeColor = System.Drawing.Color.Lime;
+            this.btnActualizar.Location = new System.Drawing.Point(133, 510);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 37);
             this.btnActualizar.TabIndex = 9;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(254, 452);
+            this.btnBorrar.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnBorrar.ForeColor = System.Drawing.Color.Red;
+            this.btnBorrar.Location = new System.Drawing.Point(380, 510);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(70, 37);
             this.btnBorrar.TabIndex = 10;
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(92, 452);
+            this.btnImprimir.Location = new System.Drawing.Point(12, 452);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 11;
@@ -353,7 +357,7 @@
             // 
             // btnLimparFormularioEmp
             // 
-            this.btnLimparFormularioEmp.Location = new System.Drawing.Point(335, 452);
+            this.btnLimparFormularioEmp.Location = new System.Drawing.Point(93, 452);
             this.btnLimparFormularioEmp.Name = "btnLimparFormularioEmp";
             this.btnLimparFormularioEmp.Size = new System.Drawing.Size(115, 23);
             this.btnLimparFormularioEmp.TabIndex = 32;
